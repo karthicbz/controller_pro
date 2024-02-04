@@ -1,3 +1,4 @@
+import 'package:controller_pro/widgets/controller_controls.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
 class HomeProvider extends ChangeNotifier {
@@ -14,14 +15,7 @@ class HomeProvider extends ChangeNotifier {
         PaneItem(
           icon: const Icon(FluentIcons.game),
           title: Text('Controller $i'),
-          body: Column(
-            children: [
-              FilledButton(
-                child: const Text("Get Device"),
-                onPressed: () {},
-              )
-            ],
-          ),
+          body: ControllerControls().controllerDetail(i),
         ),
       );
       notifyListeners();
